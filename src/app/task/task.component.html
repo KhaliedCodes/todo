@@ -1,0 +1,12 @@
+<div #myTask class="form-check mb-3" id="{{task.id}}">
+	<input class="form-check-input" id="flexCheck1" type="checkbox" (click)="check(myTask.id)">
+
+		<label *ngIf="task.isDone; else elseBlock" #title class="form-check-label text-decoration-line-through" for="flexCheck1"><span class="fst-italic pl-1 ">{{task.title}}</span></label>
+		<ng-template #title #elseBlock class="form-check-label " for="flexCheck1"><span class="fst-italic pl-1 ">{{task.title}}</span></ng-template>
+	
+	
+		
+	
+	
+	<button (click)="deleteTask(myTask.id)" class="btn btn-warning btn-sm ms-3">Delete</button>
+</div>
